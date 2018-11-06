@@ -25,15 +25,14 @@ class CarList extends React.Component{
            this.setState({listItems : responseData.results})
        });
      }
-handleDelete = (index) => {
-    const newCars = this.state.listItems.filter((m, i)=> {
-        return index !== i;
-    })
+handleDelete = (name) => {
+    const newCars = this.state.listItems.filter(listItem => { return listItem.name !== name;});
     this.setState({listItems : newCars})
+    console.log('product is deleted from the list');
     
 }
 handleChange = (event) => {
-    this.setState({[event.target.name]: event.target.value.substr(0,5)})
+    this.setState({[event.target.name]: event.target.value})
 }
 
 

@@ -36,7 +36,7 @@ class CarTable extends Component {
         <td>{item.height}</td>
         <td>{item.mass}</td>
         <td>{item.birth_year}</td>
-        <td><button onClick= {()=> onDelete(index)} className = "btn btn-danger sm">Delete</button></td>
+        <td><button onClick= {()=> onDelete(item.name)} className = "btn btn-danger sm">Delete</button></td>
         </tr>
         )}
         </tbody>
