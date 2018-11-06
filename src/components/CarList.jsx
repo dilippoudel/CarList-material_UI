@@ -53,6 +53,8 @@ addTodo = (event) => {
   handleSort = (sortColumn) => {
     this.setState({sortColumn})
   }
+
+
   handleSearch = (e) => {
       const {search, listItems} = this.state;
 this.setState({search : e.target.value})
@@ -60,6 +62,14 @@ const filteredItems = listItems.filter(car => {
     return car.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
 })
 this.setState({listItems : filteredItems})
+
+if( e.target.value ===""){
+    fetch('https://swapi.co/api/people/')
+    .then((response) => response.json())
+    .then((responseData) => {
+        this.setState({listItems : responseData.results})
+    });  
+}
   }
 
 render(){
