@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Pagination from './pagination';
 import Utils from './utils';
 import CarTable from './carTable';
